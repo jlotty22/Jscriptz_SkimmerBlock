@@ -1,0 +1,75 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();        
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$store = $storeManager->getStore()->getStoreId(); 
+// @codingStandardsIgnoreFile
+
+$responseFactory = $objectManager->create('\Magento\Framework\App\ResponseFactory');
+
+$user = array();
+/*
+//$user["cookie_session_id"] = $_COOKIE['PHPSESSID'];
+$user["session_id"]["sid"] = session_id();
+
+//echo $user["cookie_session_id"]. "<br/>".$user["session_id"]["sid"]."<br/>";
+
+$directory = $objectManager->get('\Magento\Framework\Filesystem\DirectoryList');
+ 
+echo $varPath  =  $directory->getPath('var');
+
+if(!is_dir($varPath.'/skimmers'))mkdir($varPath.'/skimmers');
+
+$file = $varPath."/skimmers/".$user["session_id"]["sid"].".txt";
+
+$count = @file_get_contents($file);
+
+if(!$count){
+	$user["session_id"]["session_count"] = 1;
+	file_put_contents($file, $user["session_id"]["session_count"]);
+}
+else{
+	$user["session_id"]["session_count"] = file_get_contents($file);
+	$user["session_id"]["session_count"]++;
+	file_put_contents($file, $user["session_id"]["session_count"]);
+}
+
+//echo "Attempts: ".$user["session_id"]["session_count"];
+
+if($user["session_id"]["session_count"] >= 5){
+	$url = $objectManager->get('\Magento\Framework\UrlInterface');
+	$customRedirectionUrl = $url->getUrl('skimmer/page/view'); //Get url of cms page
+	$responseFactory->create()->setRedirect($customRedirectionUrl)->sendResponse(); 
+	die();
+}
+*/
+?>
+
+TEST!!!!!!!!!!
+
+<script>
+require(['jquery', 'jquery/ui'], function($){ 
+
+$('.actions-toolbar').on('click', function($){
+
+alert('yo');
+
+//console.log('Place Order Clicked');
+
+      $.ajax({
+          method: "POST",
+          url: "https://new.gobingya.com/skimmerblock/page/view",
+          data: { q: 'some' },
+          dataType: "json"
+        })
+      .done(function( msg ) {
+
+       //do your thing
+       console.log(msg);
+
+      });
+
+
+ });
+ 
+});
+ </script>
