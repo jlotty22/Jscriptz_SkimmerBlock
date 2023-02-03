@@ -7,10 +7,10 @@ $store = $storeManager->getStore()->getStoreId();
 $responseFactory = $objectManager->create('\Magento\Framework\App\ResponseFactory');
 
 $user = array();
-/*
-//$user["cookie_session_id"] = $_COOKIE['PHPSESSID'];
-$user["session_id"]["sid"] = session_id();
 
+//$user["cookie_session_id"] = $_COOKIE['PHPSESSID'];
+//$user["session_id"]["sid"] = session_id();
+$user["session_id"]["sid"] = $_SERVER['REMOTE_ADDR'];
 //echo $user["cookie_session_id"]. "<br/>".$user["session_id"]["sid"]."<br/>";
 
 $directory = $objectManager->get('\Magento\Framework\Filesystem\DirectoryList');
@@ -41,35 +41,7 @@ if($user["session_id"]["session_count"] >= 5){
 	$responseFactory->create()->setRedirect($customRedirectionUrl)->sendResponse(); 
 	die();
 }
-*/
+
 ?>
 
-TEST!!!!!!!!!!
 
-<script>
-require(['jquery', 'jquery/ui'], function($){ 
-
-$('.actions-toolbar').on('click', function($){
-
-alert('yo');
-
-//console.log('Place Order Clicked');
-
-      $.ajax({
-          method: "POST",
-          url: "https://new.gobingya.com/skimmerblock/page/view",
-          data: { q: 'some' },
-          dataType: "json"
-        })
-      .done(function( msg ) {
-
-       //do your thing
-       console.log(msg);
-
-      });
-
-
- });
- 
-});
- </script>
